@@ -1,0 +1,11 @@
+M:\Projekty\Csharp\Cs_AplikacjaKliencka\bin\Debug\Cs_AplikacjaKliencka.exe.config
+M:\Projekty\Csharp\Cs_AplikacjaKliencka\bin\Debug\Cs_AplikacjaKliencka.exe
+M:\Projekty\Csharp\Cs_AplikacjaKliencka\bin\Debug\Cs_AplikacjaKliencka.pdb
+M:\Projekty\Csharp\Cs_AplikacjaKliencka\obj\Debug\Cs_AplikacjaKliencka.csprojAssemblyReference.cache
+M:\Projekty\Csharp\Cs_AplikacjaKliencka\obj\Debug\Cs_AplikacjaKliencka.Properties.Resources.resources
+M:\Projekty\Csharp\Cs_AplikacjaKliencka\obj\Debug\Cs_AplikacjaKliencka.csproj.GenerateResource.cache
+M:\Projekty\Csharp\Cs_AplikacjaKliencka\obj\Debug\Cs_AplikacjaKliencka.csproj.CoreCompileInputs.cache
+M:\Projekty\Csharp\Cs_AplikacjaKliencka\obj\Debug\Cs_AplikacjaKliencka.exe
+M:\Projekty\Csharp\Cs_AplikacjaKliencka\obj\Debug\Cs_AplikacjaKliencka.pdb
+M:\Projekty\Csharp\Cs_AplikacjaKliencka\obj\Debug\Cs_AplikacjaKliencka.loginForm.resources
+M:\Projekty\Csharp\Cs_AplikacjaKliencka\obj\Debug\Cs_AplikacjaKliencka.loggedForm.resources
