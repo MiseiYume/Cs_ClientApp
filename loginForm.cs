@@ -14,11 +14,6 @@ namespace Cs_AplikacjaKliencka
 {
     public partial class loginForm : Form
     {
-        private static string server = "127.0.0.1";
-        private static Int32 port = 6666;
-        public static TcpClient Client = new TcpClient(server, port);
-        public static NetworkStream stream;
-
         public loginForm()
         {
             InitializeComponent();
@@ -26,13 +21,11 @@ namespace Cs_AplikacjaKliencka
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            stream.Close();
-            Client.Close();
             this.Close();
         }
 
@@ -48,14 +41,15 @@ namespace Cs_AplikacjaKliencka
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            string server = "127.0.0.1";
+            Int32 port = 6666;
             string name = clientName.Text;
             string password = passwordText.Text;
-
             string message = (name + " " + password);
-            Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
-
+            Byte[] data = Encoding.ASCII.GetBytes(message);
             try
             {
+                TcpClient Client = new TcpClient(server, port);
                 NetworkStream stream = Client.GetStream();
                 stream.Write(data, 0, data.Length);
 
@@ -63,7 +57,7 @@ namespace Cs_AplikacjaKliencka
                 String response = String.Empty;
 
                 Int32 bytes = stream.Read(data, 0, data.Length);
-                response = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+                response = Encoding.ASCII.GetString(data, 0, bytes);
 
                 if (response == "1")
                 {
@@ -72,10 +66,12 @@ namespace Cs_AplikacjaKliencka
                     this.Close();
                     logged.Show();
                 }
-                else if (response == "0")
+                else
                 {
                     MessageBox.Show("Incorrect credentials.");
-                }   
+                }
+                stream.Close();
+                Client.Close();
             }
             catch (ArgumentNullException error)
             {

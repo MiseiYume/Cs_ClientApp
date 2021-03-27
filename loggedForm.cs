@@ -37,8 +37,6 @@ namespace Cs_AplikacjaKliencka
         private void button2_Click(object sender, EventArgs e)
         {
             loginForm login = new loginForm();
-            loginForm.stream.Close();
-            loginForm.Client.Close();
             this.Close();
             login.Show();
         }

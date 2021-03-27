@@ -53,7 +53,7 @@ namespace Cs_AplikacjaKliencka
             this.clientName.Name = "clientName";
             this.clientName.Size = new System.Drawing.Size(140, 20);
             this.clientName.TabIndex = 1;
-            this.clientName.Text = "TypicalUserName";
+            this.clientName.Text = "TypicalUser";
             this.clientName.TextChanged += new System.EventHandler(this.clientName_TextChanged);
             // 
             // leaveButton
@@ -91,7 +91,7 @@ namespace Cs_AplikacjaKliencka
             this.passwordText.PasswordChar = '*';
             this.passwordText.Size = new System.Drawing.Size(140, 20);
             this.passwordText.TabIndex = 7;
-            this.passwordText.Text = "password";
+            this.passwordText.Text = "1234";
             this.passwordText.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // loginForm
