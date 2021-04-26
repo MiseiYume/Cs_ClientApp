@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Sockets;
+using Operations;
 using Cs_AplikacjaKliencka;
 
 namespace Cs_AplikacjaKliencka
@@ -21,7 +23,46 @@ namespace Cs_AplikacjaKliencka
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string server = "127.0.0.1";
+            Int32 port = 6666;
+            int operation ;
+            int cAmount;
+            string message = (operation + " " + cAmount);
+            Byte[] data = Encoding.ASCII.GetBytes(message);
+            try
+            {
+                TcpClient Client = new TcpClient(server, port);
+                NetworkStream stream = Client.GetStream();
+                stream.Write(data, 0, data.Length);
 
+                data = new Byte[256];
+                String response = String.Empty;
+
+                Int32 bytes = stream.Read(data, 0, data.Length);
+                response = Encoding.ASCII.GetString(data, 0, bytes);
+
+                if (response == "1")
+                {
+                    MessageBox.Show("Logged in.");
+                    loggedForm logged = new loggedForm();
+                    this.Close();
+                    logged.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect credentials.");
+                }
+                stream.Close();
+                Client.Close();
+            }
+            catch (ArgumentNullException error)
+            {
+                MessageBox.Show("ArgumentNullException: {0}", Convert.ToString(error));
+            }
+            catch (SocketException error)
+            {
+                MessageBox.Show("SocketException: {0}", Convert.ToString(error));
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
